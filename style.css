@@ -76,7 +76,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 110vh;
+    height: 100vh;
 }
 
 .home-content {    
@@ -144,5 +144,14 @@ section {
 .banner {
     position: relative;
     width: 100%;
+    height: 100%
+}
+
+.skill {
+    width: 100%;
     height: 100vh;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
