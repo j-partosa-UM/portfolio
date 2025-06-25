@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;    
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -21,6 +22,7 @@ header {
     align-items: center;
     color: white;
     transition: 0.6s;
+    z-index: 2;
 }
 
 header.sticky {
@@ -33,7 +35,6 @@ header.sticky .navbar a {
 }
 
 header h1 {
-    font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     font-size: 2.5rem;
     letter-spacing: 0.2rem;
@@ -52,22 +53,24 @@ header h1 {
     display: inline-block;
 }
 
-.navbar a {
+.navbar li a {
     text-decoration: none;
     color: white;
     font-weight: 700;
+    font-size: 1.7rem;
     padding: 0.5rem 1rem;
-    transition: color 0.3s ease;
+    transition: color .3s ease;
 }
 
-.navbar li:nth-child(1) a {
+.navbar li a.active,
+.navbar li:hover a {
     color: #41cd41;
 }
 
 
-
 section {
     min-height: 100vh;
+    overflow: hidden;
 }
 
 .home {    
@@ -83,7 +86,14 @@ section {
     padding: 10rem 9% 2rem;
     text-align: center;
     line-height: 1.7;
-    font-size: 3.2rem;
+}
+
+.home-content h3 {
+    font-size: 3.7rem;
+}
+
+.home-content h1 {
+    font-size: 7rem;
 }
 
 .btn {
@@ -104,7 +114,7 @@ section {
     font-weight: 700;
     color: #41cd41;
     position: relative;
-    z-index: 99;
+    z-index: 1;
     transition: 0.5s;
 }
 
@@ -147,11 +157,216 @@ section {
     height: 100%
 }
 
-.skill {
+.about {
     width: 100%;
     height: 100vh;
+    padding: 5rem 5.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-content {
+    width: 100%;
+}
+
+.about-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+.about-content p {
+    font-family: 'montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: justify;
+    text-indent: 2em;
+    line-height: 1.7;
+}
+
+.skills {
+    width: 100%;
+    height: 100vh;
+    background: #0a2437;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5rem;  
+}
+
+.skills h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    margin-top: 5rem;
+}
+
+.skills p {
+    font-family: 'montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: justify;
+    text-indent: 2em;
+    line-height: 1.7;
+    margin: auto 10rem
+}
+
+.skill-container {
+    width: 100%;
+    display: flex;
+    overflow: hidden;    
+    white-space: nowrap;
+    margin: auto 0;
+}
+
+.skill-slider {
+    display: inline-block;
+    animation: slide 20s linear infinite;
+    background-color: white;
+}
+
+.skill-container:hover .skill-slider{
+    animation-play-state: paused;
+}
+
+.skill-slider img {
+    width: 14rem;
+    height: 14rem;
+    padding: 1rem 2.7rem;
+    border-left: 1px solid #000;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%)
+    }
+}
+
+.certificates {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 5rem;
+}
+
+.certificates h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.certificates #title {
+    text-align: center;
+    letter-spacing: 0.2rem;
+    margin: 5rem 7rem;
+}
+
+.certificate-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem 2rem;
+    margin-bottom: auto;
+}
+
+.certificate-card {
+    width: 30rem;
+    height: 32rem;
+}
+
+.certificate-card img {
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.certificate-card:nth-child(2)::before, .certificate-card:nth-child(3)::before {
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 23.2rem;
+    background-color: white;
+}
+
+.certificate-card img:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.card-description {
+    padding: 0.5rem 1.7rem;
     background: #fff;
+    color: #0a2437;
+    box-shadow: 0.2rem 1rem 1rem rgba(0, 0, 0, 0.2);
+    margin-top: 1.2rem;
+    position: relative;
+}
+
+.card-description h1 {
+    font-size: 2.7rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+}
+
+.card-description .subheader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-description h5 {
+    font-size: 1.2rem;
+    font-weight: 450;
+    line-height: 1.7;
+}
+
+.contact {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    background: #0a2437;
+    color: white;
+    padding: 1.3rem 0;
+}
+
+.contact h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.contact h3 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.contact h5{
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 2;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 1rem;
+    height: 1rem;
+    color: #fff;
+    margin: 1.2rem 1rem 2rem;
+    text-decoration: none;
+}
+
+.social-icons i {
+    font-size: 2rem;
 }
