@@ -370,3 +370,10 @@ section {
 .social-icons i {
     font-size: 2rem;
 }
+
+.contact p {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+    letter-spacing: 0.15rem;
+    padding-top: 1.5rem;
+}
