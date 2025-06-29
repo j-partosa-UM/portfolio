@@ -29,6 +29,14 @@ header {
     z-index: 2;
 }
 
+header::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
 header.sticky {
     background: #fff;
 }
@@ -45,8 +53,20 @@ header h1 {
     margin-left: 2rem;
 }
 
+#check {
+    display: none;
+}
+
+.icons {
+    position: absolute;
+    font-size: 2.8rem;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
 .navbar {
-    padding: 1.3rem
+    padding: 1.3rem;
 }
 
 .navbar ul {
@@ -74,7 +94,7 @@ header h1 {
 
 section {
     min-height: 100vh;
-    overflow: hidden;
+    height: auto;
 }
 
 .home {    
@@ -167,11 +187,15 @@ section {
     padding: 5rem 5.3rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .about-content {
     width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .about-content h1 {
@@ -187,6 +211,7 @@ section {
     text-align: justify;
     text-indent: 2em;
     line-height: 1.7;
+    margin: auto 10rem;
 }
 
 .skills {
@@ -221,7 +246,7 @@ section {
 .skill-container {
     width: 100%;
     display: flex;
-    overflow: hidden;    
+    overflow-x: hidden;    
     white-space: nowrap;
     margin: auto 0;
 }
@@ -254,12 +279,12 @@ section {
 
 .certificates {
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    padding-top: 5rem;
+    padding: 5rem 0;
 }
 
 .certificates h1 {
@@ -277,12 +302,13 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 4rem 2rem;
-    margin-bottom: auto;
+    margin: 5rem 0;
+    align-items: start;
 }
 
 .certificate-card {
     width: 30rem;
-    height: 32rem;
+    height: auto;
 }
 
 .certificate-card img {
@@ -291,12 +317,10 @@ section {
     margin: auto;
 }
 
-.certificate-card:nth-child(2)::before, .certificate-card:nth-child(3)::before {
-    content: ' ';
-    display: block;
+.image-placeholder {
     width: 100%;
     height: 23.2rem;
-    background-color: white;
+    background-color: #000;
 }
 
 .certificate-card img:hover {
@@ -381,3 +405,122 @@ section {
     letter-spacing: 0.15rem;
     padding-top: 1.5rem;
 }
+
+
+@media only screen and (max-width: 800px) {
+    
+    header {
+        padding: 2rem 0;
+    }
+
+    .icons {
+        display: inline-flex;
+        right: 5%;
+    }
+
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        padding: 0;
+        background: #0a2437;
+        overflow: hidden;   
+        box-shadow: 0 .5rem 1rem #FFFFFF1A;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar {
+        display: block;
+        height: 22.6rem;
+    }
+
+    .navbar li {
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.9rem 0;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(-50px);
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar li {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: calc(.15s * var(--i));
+    }
+
+    header.sticky .navbar a {
+        color: white;
+    }
+
+    .icons.sticky #menu-icon,
+    .icons.sticky #close-icon {
+        color: black;
+    }
+
+    .navbar li a.active,
+    .navbar li:hover a {
+        color: #41cd41;
+    }
+
+    .btn {
+    border: none;
+    border-radius: 5px;
+    padding: 0.2em;
+    background: #0a2437;
+    cursor: pointer;
+    position: relative;
+    margin: 10em 0 2em;
+    overflow: hidden;
+    }
+
+    .in {
+        padding: 1em 2em;
+        background: #0a2437;
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #41cd41;
+        position: relative;
+        z-index: 1;
+        transition: 0.5s;
+    }
+
+    .btn::after {
+        width: 2em;
+        height: 22em;
+    }
+
+    .about-content p {
+        font-size: 2.3em;
+        margin: auto 0;
+    }
+
+    .skills p {
+        font-size: 1.7em;
+        margin: auto 2.5rem;
+    }
+
+    .certificate-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* @media only screen and (min-width: 801px) and (max-width: 1024) {
+    
+} */

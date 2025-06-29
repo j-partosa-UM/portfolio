@@ -6,19 +6,27 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     
     <!-- header -->
      <header>
         <h1>Portfolio</h1>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
+
         <nav class="navbar">
             <ul>
-                <li><a href="#home" class="active">Welcome</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li style="--i:0;"><a href="#home" class="active">Welcome</a></li>
+                <li style="--i:1;"><a href="#about">About</a></li>
+                <li style="--i:2;"><a href="#skills">Skills</a></li>
+                <li style="--i:3;"><a href="#certificates">Certificates</a></li>
+                <li style="--i:4;"><a href="#contact">Contact</a></li>
             </ul>
         </nav>
      </header>
@@ -40,15 +48,17 @@
       <script type="text/javascript">
         window.addEventListener("scroll", function() {
             var header = document.querySelector("header");
+            var labels = document.querySelector("label")
             header.classList.toggle("sticky", window.scrollY > 0);
+            labels.classList.toggle("sticky", window.scrollY > 0);
         });
       </script>
 
     <!-- About -->
      <section id="about">
-        <div class="about">            
+        <div class="about">          
             <div class="about-content">
-                <h1>Who I Am</h1>
+                <h1>Who I Am</h1>  
                 <p>I am a computer science student with a strong passion for developing software, web, and mobile applications. My interest lies in problem-solving and exploring emerging technologies. I aim to grow into a well-rounded developer who can contribute innovative and impactful solutions to organizations and industry leaders.</p>
             </div>
         </div>
@@ -129,8 +139,8 @@
                         </div>
                     </div>
                 </article>
-                <article class="certificate-card">
-                    <!-- <img src="images/certiport-databases.jpg" alt="IT Specialist - Databases" class="certificate-image">                                         -->
+                <article class="certificate-card missing">
+                    <div class="image-placeholder"></div>
                     <div class="card-description">
                         <h1>To be taken — HTML and CSS </h1>
                         <div class="subheader">
@@ -139,8 +149,8 @@
                         </div>
                     </div>
                 </article>
-                <article class="certificate-card">
-                    <!-- <img src="images/certiport-databases.jpg" alt="IT Specialist - Databases" class="certificate-image">                         -->
+                <article class="certificate-card missing">
+                    <div class="image-placeholder"></div>
                     <div class="card-description">
                         <h1>To be taken — Java</h1>
                         <div class="subheader">
