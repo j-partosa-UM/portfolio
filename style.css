@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     margin: 0;
@@ -94,7 +94,7 @@ header h1 {
 
 section {
     min-height: 100vh;
-    height: auto;
+     height: auto;
 }
 
 .home {    
@@ -521,6 +521,8 @@ section {
 
 }
 
-/* @media only screen and (min-width: 801px) and (max-width: 1024) {
-    
-} */
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+    html, body {
+        overflow-x: hidden;
+    }
+} 
