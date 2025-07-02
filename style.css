@@ -204,14 +204,14 @@ section#contact {
 }
 
 .about-content h1 {
-    font-size: 3.5rem;
+    font-size: 3.8rem;
     font-weight: 700;
     margin: 5rem 0 3rem;
 }
 
 .about-content p {
     font-family: 'montserrat', sans-serif;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 300;
     text-align: justify;
     text-indent: 2em;
@@ -232,7 +232,7 @@ section#contact {
 }
 
 .skills h1 {
-    font-size: 3.5rem;
+    font-size: 3.8rem;
     font-weight: 700;
     letter-spacing: 0.2rem;
     margin-top: 8rem;
@@ -240,7 +240,7 @@ section#contact {
 
 .skills p {
     font-family: 'montserrat', sans-serif;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 300;
     text-align: justify;
     text-indent: 2em;
@@ -293,7 +293,7 @@ section#contact {
 }
 
 .certificates h1 {
-    font-size: 3.5rem;
+    font-size: 3.8rem;
     font-weight: 700;
 }
 
@@ -306,13 +306,13 @@ section#contact {
 .certificate-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 4rem 2rem;
+    gap: 4rem 10rem;
     margin: 5rem 0;
     align-items: start;
 }
 
 .certificate-card {
-    width: 30rem;
+    width: 45rem;
     height: auto;
 }
 
@@ -412,8 +412,11 @@ section#contact {
 }
 
 
-@media only screen and (max-width: 800px) {
-    
+@media only screen and (max-width: 880px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
     header {
         padding: 2rem 0;
     }
@@ -493,7 +496,7 @@ section#contact {
     }
 
     .about-content p {
-        font-size: 2.3em;
+        font-size: 1.7em;
         margin: auto 0;
     }
 
@@ -506,10 +509,49 @@ section#contact {
         grid-template-columns: 1fr;
     }
 
+    .certificate-card {
+        width: 30rem;
+    }
+
 }
 
-@media only screen and (min-width: 801px) and (max-width: 1024px) {
+@media only screen and (min-width: 881px) and (max-width: 1024px) {
     html, body {
         overflow-x: hidden;
+    }
+
+    .about-content p {
+        font-size: 3rem;
+        margin: auto 6rem;
+    }
+
+    .skills p {
+        font-size: 3rem;
+        margin: auto 6rem;
+    }
+
+    .certificate-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6rem 4rem;
+    }
+
+    .certificate-card {
+        width: 35rem;
+        height: auto;
+    }
+} 
+
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .certificate-container {
+        gap: 4rem 2rem;
+    }
+
+    .certificate-card {
+        width: 30rem;
+        height: auto;
     }
 } 
