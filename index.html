@@ -1,190 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
-    
-    <!-- header -->
-     <header>
-        <h1>Portfolio</h1>
 
-        <input type="checkbox" id="check">
-        <label for="check" class="icons">
-            <i class='bx bx-menu' id="menu-icon"></i>
-            <i class='bx bx-x' id="close-icon"></i>
-        </label>
+  <!-- header -->
+  <header>
+    <h1>Portfolio</h1>
 
-        <nav class="navbar">
-            <ul>
-                <li style="--i:0;"><a href="#home" class="active">Welcome</a></li>
-                <li style="--i:1;"><a href="#about">About</a></li>
-                <li style="--i:2;"><a href="#skills">Skills</a></li>
-                <li style="--i:3;"><a href="#certificates">Certificates</a></li>
-                <li style="--i:4;"><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-     </header>
+    <input type="checkbox" id="check">
+    <label for="check" class="icons">
+      <i class='bx bx-menu' id="menu-icon"></i>
+      <i class='bx bx-x' id="close-icon"></i>
+    </label>
 
-     <!-- Home -->
-      <section id="home">
-        <div class="home">
-            <div class="home-content">
-                <h3>Hi and Welcome — I'm</h3>
-                <h1>Jorgery</h1>
-                <h3>And I'm a Developer</h3>
-                <button class="btn" onclick="window.open('docs/resume.pdf', '_blank')">
-                    <div class="in">GET MY RESUME</div>
-                </button>
-            </div>
+    <nav class="navbar">
+      <ul>
+        <li style="--i:0;"><a href="#home" class="active">Welcome</a></li>
+        <li style="--i:1;"><a href="#about">About</a></li>
+        <li style="--i:2;"><a href="#skills">Skills</a></li>
+        <li style="--i:3;"><a href="#certificates">Certificates</a></li>
+        <li style="--i:4;"><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section id="home">
+    <div class="home">
+      <div class="home-content">
+        <h3>Hi and Welcome — I'm</h3>
+        <h1>Jorgery</h1>
+        <h3>And I'm a
+          <span class="typed">
+            <span class="typed-ghost" aria-hidden="true">Software Engineer | Web Developer</span>
+            <span class="typed-text" id="typed-role">Software Engineer | Web Developer</span>
+          </span>
+        </h3>
+        <button class="btn" onclick="window.open('docs/resume.pdf', '_blank')">
+          <div class="in">GET MY RESUME</div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    window.addEventListener("scroll", function () {
+      var header = document.querySelector("header");
+      var labels = document.querySelector("label")
+      header.classList.toggle("sticky", window.scrollY > 0);
+      labels.classList.toggle("sticky", window.scrollY > 0);
+    });
+  </script>
+
+  <!-- About -->
+  <section id="about">
+    <div class="about">
+      <div class="about-content">
+        <h1>Who I Am</h1>
+        <p>I am a computer science student with a strong passion for developing software, web, and mobile applications.
+          My interest lies in problem-solving and exploring emerging technologies. I aim to grow into a well-rounded
+          developer who can contribute innovative and impactful solutions to organizations and industry leaders.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="skills">
+      <h1>What I Do Best</h1>
+      <p>I am proficient in coding computer systems such as payroll, point-of-sale, and inventory management using Java.
+        I have also focused my studies on becoming well-versed in integrating SQL databases into software and
+        applications. Additionally, I am equipped with skills in designing websites using HTML and CSS, as well as
+        building mobile applications with Dart and Flutter. Below are the technical skills I bring to the table.</p>
+      <div class="skill-container">
+        <div class="skill-slider">
+          <img src="icons/java.svg" alt="java" class="skill-icon">
+          <img src="icons/python-4.svg" alt="python" class="skill-icon">
+          <img src="icons/database.svg" alt="sql">
+          <img src="icons/html-1.svg" alt="html" class="skill-icon">
+          <img src="icons/css-3.svg" alt="css" class="skill-icon">
+          <img src="icons/figma-icon.svg" alt="figma">
+          <img src="icons/canva-wordmark.svg" alt="">
+          <img src="icons/php-6.svg" alt="php">
+          <img src="icons/javascript-1.svg" alt="javascript" class="skill-icon">
+          <img src="icons/dart.svg" alt="dart" class="skill-icon">
+          <img src="icons/flutter.svg" alt="fllutter" class="skill-icon">
+          <img src="icons/firebase-1.svg" alt="firebase" class="skill-icon">
+          <img src="icons/git-icon.svg" alt="git">
+          <img src="icons/github-icon.svg" alt="github">
         </div>
-      </section>
-      
-      <script type="text/javascript">
-        window.addEventListener("scroll", function() {
-            var header = document.querySelector("header");
-            var labels = document.querySelector("label")
-            header.classList.toggle("sticky", window.scrollY > 0);
-            labels.classList.toggle("sticky", window.scrollY > 0);
-        });
-      </script>
-
-    <!-- About -->
-     <section id="about">
-        <div class="about">          
-            <div class="about-content">
-                <h1>Who I Am</h1>  
-                <p>I am a computer science student with a strong passion for developing software, web, and mobile applications. My interest lies in problem-solving and exploring emerging technologies. I aim to grow into a well-rounded developer who can contribute innovative and impactful solutions to organizations and industry leaders.</p>
-            </div>
+        <div class="skill-slider">
         </div>
-     </section>
-
-     <!-- Skills -->
-      <section id="skills">
-        <div class="skills">
-            <h1>What I Do Best</h1>
-            <p>I am proficient in coding computer systems such as payroll, point-of-sale, and inventory management using Java. I have also focused my studies on becoming well-versed in integrating SQL databases into software and applications. Additionally, I am equipped with skills in designing websites using HTML and CSS, as well as building mobile applications with Dart and Flutter. Below are the technical skills I bring to the table.</p>
-            <div class="skill-container">
-                <div class="skill-slider">
-                    <img src="icons/java.svg" alt="java" class="skill-icon">
-                    <img src="icons/python-4.svg" alt="python" class="skill-icon">
-                    <img src="icons/database.svg" alt="sql">
-                    <img src="icons/html-1.svg" alt="html" class="skill-icon">
-                    <img src="icons/css-3.svg" alt="css" class="skill-icon">
-                    <img src="icons/figma-icon.svg" alt="figma">
-                    <img src="icons/canva-wordmark.svg" alt="">
-                    <img src="icons/php-6.svg" alt="php">
-                    <img src="icons/javascript-1.svg" alt="javascript" class="skill-icon">
-                    <img src="icons/dart.svg" alt="dart" class="skill-icon">
-                    <img src="icons/flutter.svg" alt="fllutter" class="skill-icon">
-                    <img src="icons/firebase-1.svg" alt="firebase" class="skill-icon">
-                    <img src="icons/git-icon.svg" alt="git">
-                    <img src="icons/github-icon.svg" alt="github">
-                </div>
-                <div class="skill-slider">                    
-                </div>
-                <div class="skill-slider">
-                    <img src="icons/java.svg" alt="java" class="skill-icon">
-                    <img src="icons/python-4.svg" alt="python" class="skill-icon">
-                    <img src="icons/database.svg" alt="sql">
-                    <img src="icons/html-1.svg" alt="html" class="skill-icon">
-                    <img src="icons/css-3.svg" alt="css" class="skill-icon">
-                    <img src="icons/figma-icon.svg" alt="figma">
-                    <img src="icons/canva-wordmark.svg" alt="">
-                    <img src="icons/php-6.svg" alt="php">
-                    <img src="icons/javascript-1.svg" alt="javascript" class="skill-icon">
-                    <img src="icons/dart.svg" alt="dart" class="skill-icon">
-                    <img src="icons/flutter.svg" alt="fllutter" class="skill-icon">
-                    <img src="icons/firebase-1.svg" alt="firebase" class="skill-icon">
-                    <img src="icons/git-icon.svg" alt="git">
-                    <img src="icons/github-icon.svg" alt="github">
-                </div>
-                <div class="skill-slider">
-                    <img src="icons/java.svg" alt="java" class="skill-icon">
-                    <img src="icons/python-4.svg" alt="python" class="skill-icon">
-                    <img src="icons/database.svg" alt="sql">
-                    <img src="icons/html-1.svg" alt="html" class="skill-icon">
-                    <img src="icons/css-3.svg" alt="css" class="skill-icon">
-                    <img src="icons/figma-icon.svg" alt="figma">
-                    <img src="icons/canva-wordmark.svg" alt="">
-                    <img src="icons/php-6.svg" alt="php">
-                    <img src="icons/javascript-1.svg" alt="javascript" class="skill-icon">
-                    <img src="icons/dart.svg" alt="dart" class="skill-icon">
-                    <img src="icons/flutter.svg" alt="fllutter" class="skill-icon">
-                    <img src="icons/firebase-1.svg" alt="firebase" class="skill-icon">
-                    <img src="icons/git-icon.svg" alt="git">
-                    <img src="icons/github-icon.svg" alt="github">
-                </div>
-            </div>
+        <div class="skill-slider">
+          <img src="icons/java.svg" alt="java" class="skill-icon">
+          <img src="icons/python-4.svg" alt="python" class="skill-icon">
+          <img src="icons/database.svg" alt="sql">
+          <img src="icons/html-1.svg" alt="html" class="skill-icon">
+          <img src="icons/css-3.svg" alt="css" class="skill-icon">
+          <img src="icons/figma-icon.svg" alt="figma">
+          <img src="icons/canva-wordmark.svg" alt="">
+          <img src="icons/php-6.svg" alt="php">
+          <img src="icons/javascript-1.svg" alt="javascript" class="skill-icon">
+          <img src="icons/dart.svg" alt="dart" class="skill-icon">
+          <img src="icons/flutter.svg" alt="fllutter" class="skill-icon">
+          <img src="icons/firebase-1.svg" alt="firebase" class="skill-icon">
+          <img src="icons/git-icon.svg" alt="git">
+          <img src="icons/github-icon.svg" alt="github">
         </div>
-      </section>
-
-     <!-- Certifications -->
-      <section id="certificates">
-        <div class="certificates">
-            <h1 id="title">Certifications Earned</h1>
-            <div class="certificate-container">
-                <article class="certificate-card">
-                    <img src="images/certiport-databases.jpg" alt="IT Specialist - Databases" class="certificate-image">
-                    <div class="card-description">
-                        <h1>Databases</h1>
-                        <div class="subheader">
-                            <h5><span><i class="fa-solid fa-certificate"></i></span> IT SPECIALIST</h5>
-                            <h5><span><i class="fa-solid fa-calendar-days"></i></span> 2025</h5>
-                        </div>
-                    </div>
-                </article>
-                <article class="certificate-card missing">
-                    <img src="images/certiport-html-and-css.jpg" alt="IT Specialist - HTML and CSS" class="certificate-image">
-                    <div class="card-description">
-                        <h1>HTML and CSS</h1>
-                        <div class="subheader">
-                            <h5><span><i class="fa-solid fa-certificate"></i></span> IT SPECIALIST</h5>
-                            <h5><span><i class="fa-solid fa-calendar-days"></i></span> 2025</h5>
-                        </div>
-                    </div>
-                </article>
-                <article class="certificate-card missing">
-                    <img src="images/certiport-java.jpg" alt="IT Specialist - HTML and CSS" class="certificate-image">
-                    <div class="card-description">
-                        <h1>Java</h1>
-                        <div class="subheader">
-                            <h5><span><i class="fa-solid fa-certificate"></i></span> IT SPECIALIST</h5>
-                            <h5><span><i class="fa-solid fa-calendar-days"></i></span> 2025</h5>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
+        <div class="skill-slider">
+          <img src="icons/java.svg" alt="java" class="skill-icon">
+          <img src="icons/python-4.svg" alt="python" class="skill-icon">
+          <img src="icons/database.svg" alt="sql">
+          <img src="icons/html-1.svg" alt="html" class="skill-icon">
+          <img src="icons/css-3.svg" alt="css" class="skill-icon">
+          <img src="icons/figma-icon.svg" alt="figma">
+          <img src="icons/canva-wordmark.svg" alt="">
+          <img src="icons/php-6.svg" alt="php">
+          <img src="icons/javascript-1.svg" alt="javascript" class="skill-icon">
+          <img src="icons/dart.svg" alt="dart" class="skill-icon">
+          <img src="icons/flutter.svg" alt="fllutter" class="skill-icon">
+          <img src="icons/firebase-1.svg" alt="firebase" class="skill-icon">
+          <img src="icons/git-icon.svg" alt="git">
+          <img src="icons/github-icon.svg" alt="github">
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-     <!-- Contact -->
-      <section id="contact">
-        <footer>
-            <div class="contact">
-                <h1>Let's Connect</h1>
-                <h3>Jorgery Partosa II</h3>
-                <h5>Davao City</h5>
-                <h5>(+63)993 517 4166</h5>
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/jorgery-partosa-ii-153b92363/" class="social-tile" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://www.facebook.com/jorg.partosa" class="social-tile" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="mailto:p.jorg.0721@gmail.com" class="social-tile"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="https://github.com/j-partosa-UM" class="social-tile" target="_blank"><i class="fa-brands fa-square-github"></i></a>
-                </div>
-                <div class="copyright">
-                    <p>© 2025 Jorgery Partosa II, All rights Reserved</p>
-                </div>
+  <!-- Certifications -->
+  <section id="certificates">
+    <div class="certificates">
+      <h1 id="title">Certifications Earned</h1>
+      <div class="certificate-container">
+        <article class="certificate-card">
+          <img src="images/certiport-network-security.jpg" alt="IT Specialist - Network Security" class="certificate-image">
+          <div class="card-description">
+            <h1>Network Security</h1>
+            <div class="subheader">
+              <h5><span><i class="fa-solid fa-certificate"></i></span> IT SPECIALIST</h5>
+              <h5><span><i class="fa-solid fa-calendar-days"></i></span> 2026</h5>
             </div>
-        </footer>
-      </section>
+          </div>
+        </article>
+        <article class="certificate-card">
+          <img src="images/certiport-databases.jpg" alt="IT Specialist - Databases" class="certificate-image">
+          <div class="card-description">
+            <h1>Databases</h1>
+            <div class="subheader">
+              <h5><span><i class="fa-solid fa-certificate"></i></span> IT SPECIALIST</h5>
+              <h5><span><i class="fa-solid fa-calendar-days"></i></span> 2025</h5>
+            </div>
+          </div>
+        </article>
+        <article class="certificate-card">
+          <img src="images/certiport-html-and-css.jpg" alt="IT Specialist - HTML and CSS" class="certificate-image">
+          <div class="card-description">
+            <h1>HTML and CSS</h1>
+            <div class="subheader">
+              <h5><span><i class="fa-solid fa-certificate"></i></span> IT SPECIALIST</h5>
+              <h5><span><i class="fa-solid fa-calendar-days"></i></span> 2025</h5>
+            </div>
+          </div>
+        </article>
+        <article class="certificate-card">
+          <img src="images/certiport-java.jpg" alt="IT Specialist - HTML and CSS" class="certificate-image">
+          <div class="card-description">
+            <h1>Java</h1>
+            <div class="subheader">
+              <h5><span><i class="fa-solid fa-certificate"></i></span> IT SPECIALIST</h5>
+              <h5><span><i class="fa-solid fa-calendar-days"></i></span> 2025</h5>
+            </div>
+          </div>
+        </article>
 
-      <script src="script.js"></script>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <footer>
+      <div class="contact">
+        <h1>Let's Connect</h1>
+        <h3>Jorgery Partosa II</h3>
+        <h5>Davao City</h5>
+        <h5>(+63)993 517 4166</h5>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/jorgery-partosa-ii-153b92363/" class="social-tile" target="_blank"><i
+              class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.facebook.com/jorg.partosa" class="social-tile" target="_blank"><i
+              class="fa-brands fa-facebook"></i></a>
+          <a href="mailto:jorgerypartosa.ii@gmail.com" class="social-tile"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://github.com/j-partosa-UM" class="social-tile" target="_blank"><i
+              class="fa-brands fa-square-github"></i></a>
+        </div>
+        <div class="copyright">
+          <p>© 2026 Jorgery Partosa II, All rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <script src="script.js"></script>
 </body>
+
 </html>

@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 html {
     font-family: 'Raleway', sans-serif;
     font-size: 66.7%;
@@ -119,6 +124,40 @@ section#contact {
 
 .home-content h3 {
     font-size: 3.7rem;
+}
+
+.typed {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+}
+
+.typed-ghost {
+    visibility: hidden;
+    padding-right: 0.3em;
+}
+
+.typed-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.typed-text::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 1em;
+    vertical-align: -0.1em;
+    box-shadow: 0 0 0 0.04em #41cd41;
+    position: relative;
+    left: 0.12em;      
+    animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
 }
 
 .home-content h1 {
@@ -304,15 +343,20 @@ section#contact {
 }
 
 .certificate-container {
+    width: 100%;
+    max-width: 180rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4rem 10rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4rem;
+    justify-items: center;
+    padding: 0 4rem;
     margin: 5rem 0;
     align-items: start;
 }
 
 .certificate-card {
-    width: 45rem;
+    width: 100%;
+    max-width: 45rem;
     height: auto;
 }
 
@@ -506,7 +550,8 @@ section#contact {
     }
 
     .certificate-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 30rem);
+        justify-content: center;
     }
 
     .certificate-card {
@@ -531,7 +576,7 @@ section#contact {
     }
 
     .certificate-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 6rem 4rem;
     }
 
