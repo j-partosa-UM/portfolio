@@ -455,6 +455,60 @@ section#contact {
     padding-top: 1.5rem;
 }
 
+.scroll-top {
+    position: fixed;
+    right: max(2rem, env(safe-area-inset-right));
+    bottom: max(2rem, env(safe-area-inset-bottom));
+    width: clamp(4.4rem, 5vw, 6.4rem);
+    height: clamp(4.4rem, 5vw, 6.4rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.2rem solid #41cd41;
+    border-radius: 50%;
+    background: #0a2437;
+    color: #41cd41;
+    font-size: clamp(1.8rem, 2vw, 2.6rem);
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.35);
+    z-index: 3;
+
+    /* hidden until the user scrolls */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(2rem);
+    transition: opacity 0.3s ease, transform 0.3s ease,
+                visibility 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top:focus-visible {
+    outline: 0.3rem solid #fff;
+    outline-offset: 0.3rem;
+}
+
+.scroll-top:active {
+    transform: scale(0.92);
+}
+
+@media (hover: hover) {
+    .scroll-top:hover {
+        background: #41cd41;
+        color: #0a2437;
+        box-shadow: 0 0 1rem #41cd41, 0 0 3rem rgba(65, 205, 65, 0.6);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-top {
+        transition: none;
+    }
+}
 
 @media only screen and (max-width: 880px) {
     html, body {

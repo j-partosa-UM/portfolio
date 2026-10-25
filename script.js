@@ -36,6 +36,19 @@ if (typedEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     setTimeout(typeLoop, 600);
 }
 
+const scrollTopBtn = document.getElementById('scroll-top');
+
+function toggleScrollTop() {
+    scrollTopBtn.classList.toggle('show', window.scrollY > window.innerHeight * 0.5);
+}
+
+window.addEventListener('scroll', toggleScrollTop);
+window.addEventListener('load', toggleScrollTop);
+
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 window.onscroll = () => {
     let scrollPosition = window.scrollY + window.innerHeight;
     let documentHeight = document.documentElement.scrollHeight;
